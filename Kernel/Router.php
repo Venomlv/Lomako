@@ -17,5 +17,10 @@ class Router
 		}
 	}
 	
+	public function Run()
+	{
+		$UserRequest = $this->getURI();
+	}
+	
 	return true;
 }

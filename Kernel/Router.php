@@ -19,10 +19,16 @@ class Router
 	
 	public function Run()
 	{
+		require_once(ROOT.'/Controllers/HomeController.php');
 		foreach ($this->routes as $newuri => $path)
 		{			
 			echo 'User Write: '.$this->getURI();
 			echo 'Element: '.$newuri;
+			echo 'Path'.$path;
+			
+			$controllerName = 'HomeController';
+			
+			$object = new $controllerName;
 		}
 	}
 }

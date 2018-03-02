@@ -4,7 +4,7 @@
 	error_reporting(E_ALL);
 
 	define('ROOT', dirname(__FILE__));
-	require_once(ROOT.'/Kernel/autoload.php');
+	require_once(ROOT.'/Kernel/Router.php');
 
 	$router = new Router();
-	$router->run();
+	$router->Run();

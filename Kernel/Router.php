@@ -2,11 +2,11 @@
 
 class Router
 {
-	private $ways;
+	private $routes;
 	
 	public function __construct()
 	{
-		$this->ways = include(ROOT.'/options/ways.php');
+		$this->routes = include(ROOT.'/Kernel/Routes.php');
 	}
 	
 	private function getURI()
@@ -20,7 +20,6 @@ class Router
 	public function Run()
 	{
 		$UserRequest = $this->getURI();
+		echo $UserRequest;
 	}
-	
-	return true;
 }

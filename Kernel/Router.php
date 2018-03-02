@@ -19,7 +19,10 @@ class Router
 	
 	public function Run()
 	{
-		$UserRequest = $this->getURI();
-		echo $UserRequest;
+		foreach ($this->routes as $newuri => $path)
+		{			
+			echo 'User Write: '.$this->getURI();
+			echo 'Element: '.$newuri;
+		}
 	}
 }

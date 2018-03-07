@@ -1,4 +1,4 @@
 <?php return array(
-	'Home/Index' => 'Home/Index',
-	'/' => 'Home/Index'
+	'home' => 'Home/Index',
+	'' => 'Home/Index'
 );

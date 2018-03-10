@@ -23,17 +23,25 @@ class Router
 		 	if ($newuri == $this->getURI())
 			{
 				$path = explode('/', $path);
-				$template = array (
-					$controller = array_shift($path),
-					$action = array_shift($path),
-					$params = array_shift($path)
-				);
-				var_dump($template);
+			  $controller = ucfirst(array_shift($path)."Controller");
+				$action = ucfirst(array_shift($path));
+			  $params = array_shift($path);
+        break;
+
+        echo $path.'<br>';
+        echo $controller.'<br>';
+        echo $action.'<br>';
+        echo $params.'<br>';
 			}
-
-			$controllerName = 'HomeController';
-
-			$object = new $controllerName;
 		}
+    if($controller)
+    {
+        $object = new $controller();
+        $result = $object->$action($params);
+        if(!$result)
+          header("Location: /error");
+    }
+    else
+      header("Location: /error");
 	}
 }

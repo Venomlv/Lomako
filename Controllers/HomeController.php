@@ -7,4 +7,10 @@ class HomeController
 		echo 'Test';
 		return true;
 	}
+
+  public function Error()
+  {
+    echo "Erorr";
+    return true;
+  }
 }
